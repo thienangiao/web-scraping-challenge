@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Mission</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body style=" padding-top: 50px;
+              padding-left: 50px;
+              padding-right: 50px;
+              padding-bottom: 50px; 
+              margin-left: 50px;
+              margin-right: 50px;
+              width: fit-content;
+              ">
+  <div class="container-fluid">
+    <div class="jumbotron text-center" style="padding-top:10px;
+                                              padding-left: 10px;
+                                              padding-right: 10px;
+                                              padding-bottom: 20px;">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+    <div class="latestnews">
+      <h2>Latest Mars News</h2>
+      <h4>{{ mars.news_title}}</h4>
+      <p>{{mars.news_text}}</p>
+    </div>
+    <br>
+  
+    <div class="row">
+      <figure class="col-md-8">
+        <h2>Featured Mars Image</h2>
+        <img src={{mars.feature_img_url}} alt="Featured Mars Image">
+      </figure>
+      <figure class="col-md-4" style="font-size: small;">
+        <br>
+        <h4>Mars Facts</h4>
+        <table>{{mars.html_table|safe}}</table>
+      </figure>
+    </div>
+
+    <div>
+      <h2>Mars Hemispheres</h2>
+        <div class="row">
+          <figure class="col-md-6">
+            <img src={{mars.vall_img_url}} alt="Valles Marineris Hemisphere" width="450px">
+            <figcaption><b>{{mars.vall_title}}</b></figcaption>
+          </figure>
+          <figure class="col-md-6">
+            <img src={{mars.cerb_img_url}} alt="Cerberus Hemisphere" width="450px">
+           <figcaption><b>{{mars.cerb_title}}</b></figcaption>
+          </figure>
+        </div>
+        <div class="row">
+          <figure class="col-md-6">
+            <img src={{mars.schi_img_url}} alt="Schiaparelli Hemisphere" width="450px">
+            <figcaption><b>{{mars.schi_title}}</b></figcaption>
+          </figure>
+          <figure class="col-md-6">
+            <img src={{mars.syrt_img_url}} alt="Syrtis Major Hemisphere" width="450px">
+           <figcaption><b>{{mars.syrt_title}}</b></figcaption>
+          </figure>
+        </div> 
+    </div>
+
+  </div>
+
+</body>
+
+</html>
